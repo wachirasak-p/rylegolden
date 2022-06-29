@@ -176,7 +176,14 @@ const Date = () => {
                             {item.content}
                           </a>
                         }
-                        description={item.time}
+                        description={
+                          <p
+                            onClick={() => changeTime(item.time)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            {item.time}
+                          </p>
+                        }
                       />
                     </List.Item>
                   )}
