@@ -4,50 +4,18 @@ import { Drawer, Calendar } from "antd";
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import Router from "next/router";
-import { Card, Grid, Row, Text, Button, Loading } from "@nextui-org/react";
+import {
+  Card,
+  Grid,
+  Row,
+  Text,
+  Button,
+  Loading,
+  Collapse,
+} from "@nextui-org/react";
+import { LinkOutlined } from "@ant-design/icons";
 
-const list = [
-  {
-    title: "Orange",
-    img: "/images/fruit-1.jpeg",
-    price: "$5.50",
-  },
-  {
-    title: "Tangerine",
-    img: "/images/fruit-2.jpeg",
-    price: "$3.00",
-  },
-  {
-    title: "Raspberry",
-    img: "/images/fruit-3.jpeg",
-    price: "$10.00",
-  },
-  {
-    title: "Lemon",
-    img: "/images/fruit-4.jpeg",
-    price: "$5.30",
-  },
-  {
-    title: "Advocato",
-    img: "/images/fruit-5.jpeg",
-    price: "$15.70",
-  },
-  {
-    title: "Lemon 2",
-    img: "/images/fruit-6.jpeg",
-    price: "$8.00",
-  },
-  {
-    title: "Banana",
-    img: "/images/fruit-7.jpeg",
-    price: "$7.50",
-  },
-  {
-    title: "Watermelon",
-    img: "/images/fruit-8.jpeg",
-    price: "$12.20",
-  },
-];
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [value, setValue] = useState(moment());
@@ -79,8 +47,6 @@ export default function Home() {
   const changeStreamers = (input) => {
     fetchStreamersData(input);
   };
-
-  const openTwitch = (input) => {};
 
   const onSelect = (newValue) => {
     setValue(newValue);
@@ -120,8 +86,17 @@ export default function Home() {
 
                 // onPanelChange={onPanelChange}
               />
+              <Collapse shadow title="เปิดสารบัญ" css={{ marginTop: "10px" }}>
+                <iframe
+                  width="100%"
+                  height="800"
+                  src="https://docs.google.com/spreadsheets/d/1XJwvbPFhtMgyhE7Y0MhUnCpYJFynLUxdM0x_Cedtjs4/edit#gid=511480813"
+                ></iframe>
+              </Collapse>
             </div>
           </Grid>
+
+          {/* streamers list */}
           <Grid xs={12} lg={4}>
             <div>
               <Text
@@ -268,6 +243,8 @@ export default function Home() {
             </div>
           </Grid>
         </Grid.Container>
+
+        <Footer />
       </main>
     </div>
   );

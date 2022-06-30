@@ -13,14 +13,16 @@ import {
   Spin,
   List,
 } from "antd";
-import { SmileOutlined, LinkOutlined } from "@ant-design/icons";
+import { SmileOutlined, LinkOutlined, HomeOutlined } from "@ant-design/icons";
 
-import { Button, Grid } from "@nextui-org/react";
+import { Button, Grid, Collapse, Text } from "@nextui-org/react";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Router from "next/router";
 import moment from "moment";
+
+import Footer from "../../components/Footer";
 
 const Date = () => {
   const router = useRouter();
@@ -125,15 +127,36 @@ const Date = () => {
       </Head>
       <Spin size="large" spinning={loading}>
         <Row>
-          <Col xs={24} lg={18} style={{ paddingTop: "50px" }}>
+          <Col style={{ padding: "10px" }}>
+            <Button
+              auto
+              color="gradient"
+              rounded
+              bordered
+              icon={<HomeOutlined />}
+              onClick={() => Router.push("/")}
+            >
+              หน้าแรก
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={24} lg={18}>
             <iframe
               src={src}
               height="700"
               width="100%"
               allowFullScreen
             ></iframe>
+            <Collapse shadow title="เปิดสารบัญ" css={{ fontSize: "$sm" }}>
+              <iframe
+                width="100%"
+                height="700"
+                src="https://docs.google.com/spreadsheets/d/1XJwvbPFhtMgyhE7Y0MhUnCpYJFynLUxdM0x_Cedtjs4/edit#gid=511480813"
+              ></iframe>
+            </Collapse>
           </Col>
-          <Col xs={24} lg={6} style={{ paddingTop: "50px" }}>
+          <Col xs={24} lg={6}>
             <Card
               className="bg"
               title={moment(data.date).format("วันที่ DD เดือน MM ปี YYYY")}
@@ -217,52 +240,8 @@ const Date = () => {
             ) : null}
           </Col>
         </Row>
-        <Row>
-          <Col span={24} style={{ textAlign: "center" }}>
-            <h5 className="white">
-              Content by{" "}
-              <a
-                href="https://www.twitch.tv/fifatargrean"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                FifaTargrean
-                <LinkOutlined />
-              </a>
-            </h5>
-            <h5 className="white">
-              Arrange by{" "}
-              <a
-                href="https://bit.ly/3uaZcgx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Kartana9
-                <LinkOutlined />
-              </a>
-            </h5>
-            <h5 className="white">
-              Website by{" "}
-              <a
-                href="https://github.com/wachirasak-p"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ThomasShelby416
-                <LinkOutlined />{" "}
-              </a>
-              &{" "}
-              <a
-                href="https://github.com/Yelleyy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Yelleyy
-                <LinkOutlined />{" "}
-              </a>
-            </h5>
-          </Col>
-        </Row>
+
+        <Footer />
 
         <Drawer
           title="เลือกวันที่"
