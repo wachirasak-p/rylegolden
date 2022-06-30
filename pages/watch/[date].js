@@ -230,7 +230,7 @@ const Date = () => {
                 auto
                 onClick={() => dcNext(data.dc_next)}
               >
-                ดูต่อจากสตรีมหลุด
+                ดูต่อของวันเดียวกัน
               </Button>
             ) : null}
           </Col>

@@ -84,8 +84,6 @@ export default function Home() {
                 value={value}
                 onSelect={onSelect}
                 validRange={[moment("2022/04/19"), moment()]}
-
-                // onPanelChange={onPanelChange}
               />
               <SheetCollapse />
             </div>
