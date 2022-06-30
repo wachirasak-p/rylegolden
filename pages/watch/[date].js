@@ -219,7 +219,7 @@ const Date = () => {
         </Row>
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
-            <h3 className="white">
+            <h5 className="white">
               Content by{" "}
               <a
                 href="https://www.twitch.tv/fifatargrean"
@@ -229,8 +229,8 @@ const Date = () => {
                 FifaTargrean
                 <LinkOutlined />
               </a>
-            </h3>
-            <h3 className="white">
+            </h5>
+            <h5 className="white">
               Arrange by{" "}
               <a
                 href="https://bit.ly/3uaZcgx"
@@ -240,8 +240,8 @@ const Date = () => {
                 Kartana9
                 <LinkOutlined />
               </a>
-            </h3>
-            <h3 className="white">
+            </h5>
+            <h5 className="white">
               Website by{" "}
               <a
                 href="https://github.com/wachirasak-p"
@@ -260,7 +260,7 @@ const Date = () => {
                 Yelleyy
                 <LinkOutlined />{" "}
               </a>
-            </h3>
+            </h5>
           </Col>
         </Row>
 
