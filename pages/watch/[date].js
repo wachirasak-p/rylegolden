@@ -72,7 +72,7 @@ const Date = () => {
 
   const fetchData = (input) => {
     setLoading(true);
-    fetch("https://raw.githubusercontent.com/Yelleyy/publicfile/main/data/" + input + ".json")
+    fetch("https://raw.githubusercontent.com/wachirasak-p/fifatargrean-public/main/data/" + input + ".json")
       .then((response) => response.json())
       .then((result) => {
         setData(result);
