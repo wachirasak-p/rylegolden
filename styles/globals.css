@@ -19,7 +19,8 @@ a {
 }
 
 .white {
-    color: rgb(156, 156, 156) !important;
+    font-weight: bold;
+    color: rgb(189, 189, 189) !important;
 }
 
 .ant-list-item-meta-description {

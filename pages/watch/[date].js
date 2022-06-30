@@ -85,7 +85,7 @@ const Date = () => {
         setVisible(false);
       })
       .catch((error) => {
-        noti("error", "ไม่มีข้อมูล");
+        noti("error", "ไม่มีข้อมูล","กำลังอัพเดท..");
         setLoading(false);
         console.error(error);
       });
@@ -133,7 +133,7 @@ const Date = () => {
             <Card
               className="bg"
               title={moment(data.date).format("วันที่ DD เดือน MM ปี YYYY")}
-              extra={ <a onClick={showDrawer} style={{display: 'inline-flex','align-items': 'center'} }>เลือกวันที่ <img width="32" class="margin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Icons8_flat_calendar.svg/512px-Icons8_flat_calendar.svg.png"></img></a>}
+              extra={<a onClick={showDrawer} style={{ display: 'inline-flex', alignItems: 'center' }}>เลือกวันที่ <img width="32" className="margin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Icons8_flat_calendar.svg/512px-Icons8_flat_calendar.svg.png"></img></a>}
             >
               {/* <Timeline mode="left">
                 {list.map((data, index) => (
@@ -203,26 +203,9 @@ const Date = () => {
         </Row>
         <Row>
           <Col span={24} style={{ textAlign: "center" }}>
-            <h3>
-              <a
-                href="https://www.twitch.tv/fifatargrean"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Content by FifaTargrean <LinkOutlined />
-              </a>
-            </h3>
-            <h3>
-              <a
-                href="https://bit.ly/3uaZcgx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Arrange by Kartana9
-                <LinkOutlined />
-              </a>
-            </h3>
-            <h3 className="white">Website by ThomasShelby416</h3>
+            <h3 className="white">Content by <a href="https://www.twitch.tv/fifatargrean" target="_blank" rel="noopener noreferrer">FifaTargrean<LinkOutlined/></a></h3>
+            <h3 className="white">Arrange by <a href="https://bit.ly/3uaZcgx" target="_blank" rel="noopener noreferrer">Kartana9<LinkOutlined/></a></h3>
+            <h3 className="white">Website by <a href="https://github.com/wachirasak-p" target="_blank">ThomasShelby416<LinkOutlined/> </a>& <a href="https://github.com/Yelleyy" target="_blank">Yelleyy<LinkOutlined/> </a></h3>
           </Col>
         </Row>
 
@@ -231,7 +214,6 @@ const Date = () => {
           placement="right"
           onClose={onClose}
           visible={visible}
-          // width={720}
         >
           <Calendar
             value={value}
