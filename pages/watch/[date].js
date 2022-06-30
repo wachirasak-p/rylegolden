@@ -65,8 +65,8 @@ const Date = () => {
 
   useEffect(() => {
     setSrc(
-      `https://player.twitch.tv/?video=${data.video_id}&parent=localhost&time=${selectedTime}`
-      // `https://player.twitch.tv/?video=${data.video_id}&parent=rylegolden.vercel.app&time=${selectedTime}`
+      // `https://player.twitch.tv/?video=${data.video_id}&parent=localhost&time=${selectedTime}`
+      `https://player.twitch.tv/?video=${data.video_id}&parent=rylegolden.vercel.app&time=${selectedTime}`
     );
   }, [selectedTime]);
 
@@ -78,8 +78,8 @@ const Date = () => {
         setData(result);
         setList(result.list);
         setSrc(
-          `https://player.twitch.tv/?video=${result.video_id}&parent=localhost&time=0h0m0s`
-          // `https://player.twitch.tv/?video=${result.video_id}&parent=rylegolden.vercel.app&time=0h0m0s`
+          // `https://player.twitch.tv/?video=${result.video_id}&parent=localhost&time=0h0m0s`
+          `https://player.twitch.tv/?video=${result.video_id}&parent=rylegolden.vercel.app&time=0h0m0s`
         );
         setLoading(false);
         setVisible(false);
