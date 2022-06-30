@@ -16,6 +16,7 @@ import {
 import { LinkOutlined } from "@ant-design/icons";
 
 import Footer from "../components/Footer";
+import SheetCollapse from "../components/SheetCollapse";
 
 export default function Home() {
   const [value, setValue] = useState(moment());
@@ -86,13 +87,7 @@ export default function Home() {
 
                 // onPanelChange={onPanelChange}
               />
-              <Collapse shadow title="เปิดสารบัญ" css={{ marginTop: "10px" }}>
-                <iframe
-                  width="100%"
-                  height="800"
-                  src="https://docs.google.com/spreadsheets/d/1XJwvbPFhtMgyhE7Y0MhUnCpYJFynLUxdM0x_Cedtjs4/edit#gid=511480813"
-                ></iframe>
-              </Collapse>
+              <SheetCollapse />
             </div>
           </Grid>
 

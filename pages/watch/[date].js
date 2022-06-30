@@ -23,6 +23,7 @@ import Router from "next/router";
 import moment from "moment";
 
 import Footer from "../../components/Footer";
+import SheetCollapse from "../../components/SheetCollapse";
 
 const Date = () => {
   const router = useRouter();
@@ -148,13 +149,7 @@ const Date = () => {
               width="100%"
               allowFullScreen
             ></iframe>
-            <Collapse shadow title="เปิดสารบัญ" css={{ fontSize: "$sm" }}>
-              <iframe
-                width="100%"
-                height="700"
-                src="https://docs.google.com/spreadsheets/d/1XJwvbPFhtMgyhE7Y0MhUnCpYJFynLUxdM0x_Cedtjs4/edit#gid=511480813"
-              ></iframe>
-            </Collapse>
+            <SheetCollapse />
           </Col>
           <Col xs={24} lg={6}>
             <Card
