@@ -65,22 +65,21 @@ const Date = () => {
 
   useEffect(() => {
     setSrc(
-      // `https://player.twitch.tv/?video=${data.video_id}&parent=localhost&time=${selectedTime}`
-      `https://player.twitch.tv/?video=${data.video_id}&parent=rylegolden.vercel.app&time=${selectedTime}`
+      `https://player.twitch.tv/?video=${data.video_id}&parent=localhost&time=${selectedTime}`
+      // `https://player.twitch.tv/?video=${data.video_id}&parent=rylegolden.vercel.app&time=${selectedTime}`
     );
   }, [selectedTime]);
 
   const fetchData = (input) => {
     setLoading(true);
-    fetch("/data/" + input + ".json", { mode: "no-cors" })
+    fetch("https://raw.githubusercontent.com/Yelleyy/publicfile/main/data/" + input + ".json")
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setData(result);
         setList(result.list);
         setSrc(
-          // `https://player.twitch.tv/?video=${result.video_id}&parent=localhost&time=0h0m0s`
-          `https://player.twitch.tv/?video=${result.video_id}&parent=rylegolden.vercel.app&time=0h0m0s`
+          `https://player.twitch.tv/?video=${result.video_id}&parent=localhost&time=0h0m0s`
+          // `https://player.twitch.tv/?video=${result.video_id}&parent=rylegolden.vercel.app&time=0h0m0s`
         );
         setLoading(false);
         setVisible(false);
@@ -133,8 +132,8 @@ const Date = () => {
           <Col xs={24} lg={6} style={{ paddingTop: "50px" }}>
             <Card
               className="bg"
-              title={data.date}
-              extra={<a onClick={showDrawer}>เลือกวันอื่น</a>}
+              title={moment(data.date).format("วันที่ DD เดือน MM ปี YYYY")}
+              extra={ <a onClick={showDrawer} style={{display: 'inline-flex','align-items': 'center'} }>เลือกวันที่ <img width="32" class="margin" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Icons8_flat_calendar.svg/512px-Icons8_flat_calendar.svg.png"></img></a>}
             >
               {/* <Timeline mode="left">
                 {list.map((data, index) => (
@@ -237,7 +236,7 @@ const Date = () => {
           <Calendar
             value={value}
             onSelect={onSelect}
-            validRange={[moment("2022/04/19"), moment()]}
+            validRange={[moment("2022-04-19"), moment()]}
           />
         </Drawer>
       </Spin>
