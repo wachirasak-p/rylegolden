@@ -32,8 +32,8 @@ export default function Home() {
     setLoading(true);
     fetch(
       "https://raw.githubusercontent.com/wachirasak-p/fifatargrean-public/main/streamers/" +
-        input +
-        ".json"
+      input +
+      ".json"
     )
       .then((response) => response.json())
       .then((result) => {
@@ -71,13 +71,13 @@ export default function Home() {
                 h1
                 size={40}
                 css={{
-                  textGradient: "45deg, $purple600 -20%, $pink600 100%",
+                  textGradient: "45deg, $purple400 -5%, $pink600 100%",
                   marginBottom: "10px",
                   textAlign: "center",
                 }}
                 weight="bold"
               >
-                ปฏิทิน FifaTargrean
+                ปฏิทิน Ryle Golden
               </Text>
               <Calendar
                 style={{ padding: "10px" }}
@@ -96,7 +96,7 @@ export default function Home() {
                 h1
                 size={32}
                 css={{
-                  textGradient: "45deg, $purple600 -20%, $pink600 100%",
+                  textGradient: "45deg, $gray600 -20%, $pink600 100%",
                   marginBottom: "10px",
                   textAlign: "center",
                 }}
@@ -109,6 +109,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("normal_m")}
                 >
                   ประชาชนชาย
@@ -118,6 +125,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("normal_f")}
                 >
                   ประชาชนหญิง
@@ -127,6 +141,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("police_m")}
                 >
                   ตำรวจชาย
@@ -136,6 +157,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("police_f")}
                 >
                   ตำรวจหญิง
@@ -145,6 +173,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("doctor_m")}
                 >
                   หมอชาย
@@ -154,6 +189,13 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
+                  css={{
+                    transition: 'all 0.8s ease',
+                    '&:hover': {
+                      transform: 'scale(0.8) perspective(1px)',
+                      transition: '0.8s',
+                    },
+                  }}
                   onClick={() => changeStreamers("doctor_f")}
                 >
                   หมอหญิง
@@ -166,7 +208,14 @@ export default function Home() {
                   streamersList.map((item, index) => (
                     <Grid xs={4} key={index}>
                       <Card isPressable>
-                        <Card.Body css={{ p: 0 }}>
+                        <Card.Body css={{
+                          p: 9,
+                          '&:hover': {
+                            background: '$gray800',
+                            color: '$gray800',
+                            transition: '0.6s',
+                          }
+                        }}>
                           {item.twitch_img ? (
                             <a
                               href={`https://www.twitch.tv/${item.twitch_name}`}
@@ -178,6 +227,7 @@ export default function Home() {
                                 objectFit="cover"
                                 width="100%"
                                 height={140}
+                                css={{borderRadius: '5px'}}
                                 alt={item.twitch_name}
                               />
                             </a>
@@ -216,10 +266,10 @@ export default function Home() {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Text
+                              <Text 
                                 css={{
-                                  color: "$accents7",
-                                  fontWeight: "$semibold",
+                                  color: "$accents8",
+                                  fontWeight: "$bold",
                                   fontSize: "$sm",
                                 }}
                               >
