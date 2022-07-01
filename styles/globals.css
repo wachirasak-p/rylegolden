@@ -38,3 +38,14 @@ a {
 .margin {
     margin-left: 5px;
 }
+
+.streamer {
+    transition: all 0.8s ease;
+    transform: scale(1)
+}
+
+.streamer:hover {
+    transition: all 0.8s ease;
+    transform: scale(0.8) perspective(1px);
+    transition: 0.8s;
+}

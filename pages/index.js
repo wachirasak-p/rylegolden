@@ -13,7 +13,6 @@ import {
   Loading,
   Collapse,
 } from "@nextui-org/react";
-import { LinkOutlined } from "@ant-design/icons";
 
 import Footer from "../components/Footer";
 import SheetCollapse from "../components/SheetCollapse";
@@ -109,13 +108,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("normal_m")}
                 >
                   ประชาชนชาย
@@ -125,13 +118,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("normal_f")}
                 >
                   ประชาชนหญิง
@@ -141,13 +128,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("police_m")}
                 >
                   ตำรวจชาย
@@ -157,13 +138,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("police_f")}
                 >
                   ตำรวจหญิง
@@ -173,13 +148,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("doctor_m")}
                 >
                   หมอชาย
@@ -189,13 +158,7 @@ export default function Home() {
                   color="gradient"
                   rounded
                   bordered
-                  css={{
-                    transition: 'all 0.8s ease',
-                    '&:hover': {
-                      transform: 'scale(0.8) perspective(1px)',
-                      transition: '0.8s',
-                    },
-                  }}
+                  className="streamer"
                   onClick={() => changeStreamers("doctor_f")}
                 >
                   หมอหญิง
@@ -227,7 +190,7 @@ export default function Home() {
                                 objectFit="cover"
                                 width="100%"
                                 height={140}
-                                css={{borderRadius: '5px'}}
+                                css={{ borderRadius: '5px' }}
                                 alt={item.twitch_name}
                               />
                             </a>
@@ -266,7 +229,7 @@ export default function Home() {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Text 
+                              <Text
                                 css={{
                                   color: "$accents8",
                                   fontWeight: "$bold",
@@ -286,7 +249,6 @@ export default function Home() {
             </div>
           </Grid>
         </Grid.Container>
-
         <Footer />
       </main>
     </div>
