@@ -4,7 +4,11 @@ import { Collapse } from "@nextui-org/react";
 const SheetCollapse = () => {
   return (
     <>
-      <Collapse shadow title="เปิดสารบัญ" css={{ marginTop: "10px",background: "$gray300" }}>
+      <Collapse
+        shadow
+        title="เปิดสารบัญ"
+        css={{ marginTop: "10px", background: "$gray300" }}
+      >
         <iframe
           width="100%"
           height="700"
