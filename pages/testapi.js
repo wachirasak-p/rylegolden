@@ -37,7 +37,7 @@ const Testapi = () => {
     setListForCheckLive(
       streamersList
         .map(function (item, index) {
-          return "user_login=" + item.twitch_name;
+          return "user_login=" + item.twitch_name.toLowerCase();
         })
         .join("&")
     );
