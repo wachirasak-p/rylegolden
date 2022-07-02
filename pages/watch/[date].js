@@ -123,7 +123,7 @@ const Date = () => {
   return (
     <div>
       <Head>
-        <title>Ryle Golden</title>
+        <title>RyleGolden {date}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Spin size="large" spinning={loading}>
@@ -234,6 +234,7 @@ const Date = () => {
               </Button>
             ) : null}
           </Col>
+          <Col span={24}></Col>
         </Row>
 
         <Footer />
