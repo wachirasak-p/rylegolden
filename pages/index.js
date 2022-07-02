@@ -2,6 +2,8 @@ import Head from "next/head";
 
 import { Drawer, Calendar } from "antd";
 import React, { useState, useEffect } from "react";
+import { useEffectOnce } from "react-use";
+
 import moment from "moment";
 import Router from "next/router";
 import {
@@ -217,7 +219,7 @@ export default function Home() {
               </Text>
               <Grid.Container gap={2} justify="flex-start">
                 {otherGameList.map((item, index) => (
-                  <Grid xs={12} sm={4} key={index}>
+                  <Grid xs={12} sm={3} key={index}>
                     <Card css={{ w: "100%", h: "400px" }}>
                       <Card.Header
                         css={{ position: "absolute", zIndex: 1, top: 5 }}
