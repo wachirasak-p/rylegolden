@@ -167,29 +167,40 @@ const StreamersList = () => {
               <Loading />
             ) : (
               streamersList.map((item, index) => (
-                <Grid xs={4} key={index}>
-                  <Card isPressable>
-                    <Card.Body
-                      css={{
-                        p: 9,
-                        "&:hover": {
-                          background: "$gray800",
-                          color: "$gray800",
-                          transition: "0.6s",
-                        },
-                      }}
-                    >
-                      {item.twitch_img ? (
-                        <a
-                          href={`https://www.twitch.tv/${item.twitch_name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {streamersListLive.find(
-                            (o) =>
-                              o.user_login === item.twitch_name.toLowerCase()
-                          ) ? (
-                            <Badge.Ribbon text="LIVE" color="red">
+                <>
+                  <Grid xs={4} key={index}>
+                    <Card isPressable>
+                      <Card.Body
+                        css={{
+                          p: 9,
+                          "&:hover": {
+                            background: "$gray800",
+                            color: "$gray800",
+                            transition: "0.6s",
+                          },
+                        }}
+                      >
+                        {item.twitch_img ? (
+                          <a
+                            href={`https://www.twitch.tv/${item.twitch_name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {streamersListLive.find(
+                              (o) =>
+                                o.user_login === item.twitch_name.toLowerCase()
+                            ) ? (
+                              <Badge.Ribbon text="LIVE" color="red">
+                                <Card.Image
+                                  src={item.twitch_img}
+                                  objectFit="cover"
+                                  width="100%"
+                                  height={140}
+                                  css={{ borderRadius: "5px" }}
+                                  alt={item.twitch_name}
+                                />
+                              </Badge.Ribbon>
+                            ) : (
                               <Card.Image
                                 src={item.twitch_img}
                                 objectFit="cover"
@@ -198,64 +209,55 @@ const StreamersList = () => {
                                 css={{ borderRadius: "5px" }}
                                 alt={item.twitch_name}
                               />
-                            </Badge.Ribbon>
-                          ) : (
-                            <Card.Image
-                              src={item.twitch_img}
-                              objectFit="cover"
-                              width="100%"
-                              height={140}
-                              css={{ borderRadius: "5px" }}
-                              alt={item.twitch_name}
-                            />
-                          )}
-                        </a>
-                      ) : (
-                        <a
-                          href={`https://www.twitch.tv/${item.twitch_name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Badge.Ribbon text="LIVE" color="red">
-                            <Card.Image
-                              src="https://cdn.pixabay.com/photo/2021/12/10/16/38/twitch-6860918_960_720.png"
-                              objectFit="cover"
-                              width="100%"
-                              height={140}
-                              alt={item.twitch_name}
-                            />
-                          </Badge.Ribbon>
-                        </a>
-                      )}
-                    </Card.Body>
-                    <Card.Footer css={{ justifyItems: "flex-start" }}>
-                      <Row wrap="wrap" justify="space-between" align="center">
-                        <a
-                          href={`https://www.twitch.tv/${item.twitch_name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Text b>{item.twitch_name}</Text>
-                        </a>
-                        <a
-                          href={`https://www.twitch.tv/${item.twitch_name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Text
-                            css={{
-                              color: "$accents8",
-                              fontWeight: "$bold",
-                              fontSize: "$sm",
-                            }}
+                            )}
+                          </a>
+                        ) : (
+                          <a
+                            href={`https://www.twitch.tv/${item.twitch_name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            {item.ic_name}
-                          </Text>
-                        </a>
-                      </Row>
-                    </Card.Footer>
-                  </Card>
-                </Grid>
+                            <Badge.Ribbon text="LIVE" color="red">
+                              <Card.Image
+                                src="https://cdn.pixabay.com/photo/2021/12/10/16/38/twitch-6860918_960_720.png"
+                                objectFit="cover"
+                                width="100%"
+                                height={140}
+                                alt={item.twitch_name}
+                              />
+                            </Badge.Ribbon>
+                          </a>
+                        )}
+                      </Card.Body>
+                      <Card.Footer css={{ justifyItems: "flex-start" }}>
+                        <Row wrap="wrap" justify="space-between" align="center">
+                          <a
+                            href={`https://www.twitch.tv/${item.twitch_name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Text b>{item.twitch_name}</Text>
+                          </a>
+                          <a
+                            href={`https://www.twitch.tv/${item.twitch_name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Text
+                              css={{
+                                color: "$accents8",
+                                fontWeight: "$bold",
+                                fontSize: "$sm",
+                              }}
+                            >
+                              {item.ic_name}
+                            </Text>
+                          </a>
+                        </Row>
+                      </Card.Footer>
+                    </Card>
+                  </Grid>
+                </>
               ))
             )}
           </Grid.Container>
