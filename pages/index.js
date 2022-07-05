@@ -100,7 +100,7 @@ export default function Home() {
 
       <main>
         <Grid.Container gap={2} justify="flex-start">
-          <Grid xs={12} lg={8}>
+          <Grid xs={12} lg={7}>
             <div>
               <Text
                 h1
@@ -149,7 +149,7 @@ export default function Home() {
                             transform="uppercase"
                             color="#ffffffAA"
                           >
-                            New
+                            {item.status}
                           </Text>
                         </Col>
                       </Card.Header>
@@ -178,11 +178,15 @@ export default function Home() {
                           title={` ${item.game}`}
                           css={{ width: "100%" }}
                         >
-                          <div style={{ display: "flex" }}>
+                          <div
+                            style={{
+                              display: "inline-block",
+                            }}
+                          >
                             {item.list.map((item2, index2) => (
                               <Tooltip content={item2.desc} key={index2}>
                                 <Button
-                                  css={{ margin: "2px" }}
+                                  css={{ margin: "2px !important" }}
                                   auto
                                   color="primary"
                                   rounded
@@ -230,7 +234,7 @@ export default function Home() {
                             transform="uppercase"
                             color="#ffffffAA"
                           >
-                            New
+                            {item.status}
                           </Text>
                         </Col>
                       </Card.Header>
@@ -259,11 +263,11 @@ export default function Home() {
                           title={` ${item.game}`}
                           css={{ width: "100%" }}
                         >
-                          <div style={{ display: "flex" }}>
+                          <div style={{ display: "inline-block" }}>
                             {item.list.map((item2, index2) => (
                               <Tooltip content={item2.desc} key={index2}>
                                 <Button
-                                  css={{ margin: "2px" }}
+                                  css={{ margin: "2px !important" }}
                                   auto
                                   color="primary"
                                   rounded
@@ -288,7 +292,9 @@ export default function Home() {
           {/* end other game */}
 
           {/* streamers list */}
-          <StreamersList />
+          <Grid xs={12} lg={5}>
+            <StreamersList />
+          </Grid>
           {/* end streamers list */}
         </Grid.Container>
         <Footer />
